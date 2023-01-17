@@ -1,0 +1,16 @@
+.settings-btns {
+    margin-bottom: 100px;
+
+    .btn {
+        min-width: 170px;
+    }
+
+    .mr {
+        margin-right: 15px;
+    }
+
+    .active {
+        background-color: #0060fc;
+        color: #fff;
+    }
+}

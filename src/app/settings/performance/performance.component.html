@@ -1,0 +1,141 @@
+<ng-container *ngIf="formData">
+    <div class="performance-container">
+        <form [formGroup]="formData" (ngSubmit)="save()">
+            <div class="title">Show by:
+                <mat-form-field appearance="outline" class="show-type">
+                    <mat-select [(value)]="selected" (selectionChange)="onSelect(selected)">
+                      <mat-option value="soloDrivers">Solo Drivers</mat-option>
+                      <mat-option value="teamDrivers">Team Drivers</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+    
+            <div class="question-settings">Mileage</div>  
+            
+            <div class="answer-settings">
+                <div class="circle"></div>Weekly mileage shouldn't be less than 
+                <input class="inpt" type="text"  autocomplete="off" formControlName='mileage_per_week'/>  
+                per week.
+            </div>
+    
+            <div class="question-settings">Home time</div>  
+    
+            <div class="answer-settings">
+                <div class="circle"></div>
+                Home time shouldn't be more than 
+                <input class="inpt" type="text"  autocomplete="off" formControlName='home_time_duration'/> days in
+                <input class="inpt" type="text"  autocomplete="off" formControlName="home_time_in_days" /> days of driving.
+            </div>
+    
+            <div class="answer-settings mt">
+                <div class="circle"></div>
+                Home time shouldn't be on <button type="button" class="day-btn" *ngFor="let day of daysArray; let i = index"
+                [ngClass]="homeTimeDay[i].checked ? 'active-day ' : ''" (click)="selectDay(true, i)">{{ day }}</button>
+            </div>
+    
+            <div class="question-settings">Driving time</div>  
+    
+            <div class="answer-settings">
+                <div class="circle"></div>
+                Driving time shouldn't be less than 
+                <input class="inpt" type="text"  autocomplete="off" formControlName="minimum_driving_time"/> percent.
+            </div>
+    
+            <div class="answer-settings mt">
+                <div class="circle"></div>
+                34 hours reset shouldn't be done on <button type="button" 
+                class="day-btn" *ngFor="let day of daysArray; let i = index"
+                [ngClass]="drivingTimeDay[i].checked ? 'active-day ' : ''" (click)="selectDay(false, i)">{{ day }}</button>
+            </div>
+    
+            <div class="question-settings">Commodity</div>  
+    
+            <div class="answer-settings">
+                <div class="circle"></div>
+                Forbidden commodities 
+                <div class="search-container">
+                    <input class="search-inpt" type="text"  autocomplete="off" placeholder="Search..." 
+                    formControlName="forbidden_comodity"/>
+                    <mat-icon class="search-icon">search</mat-icon> 
+                </div>
+            </div>
+    
+            <div class="answer-settings mt">
+                <div class="circle"></div>
+                Forbidden states for solo drivers
+                <div class="search-container">
+                    <input class="search-inpt" type="text"  autocomplete="off" placeholder="Search..."/>
+                    <mat-icon class="search-icon">search</mat-icon> 
+                </div> {{ data.forbidden_state }}.
+            </div>
+    
+            <div class="question-settings">Weight</div>  
+    
+            <div class="answer-settings">
+                <div class="circle"></div>
+                Weight shouldn't be over <input class="inpt" type="text"  autocomplete="off" 
+                formControlName="max_weight" /> lbs.
+            </div>
+    
+            <div class="question-settings">Idiling</div>  
+    
+            <div class="answer-settings">
+                <div class="circle"></div>
+                Idiling shouldn't be more than <input class="inpt" type="text"  autocomplete="off" 
+                formControlName="max_idle_time" /> percent.
+            </div>
+    
+            <div class="question-settings">Safety Score</div>  
+    
+            <div class="answer-settings">
+                <div class="circle"></div>
+                Safety score shouldn't be less than <input class="inpt" type="text"  
+                autocomplete="off" formControlName="min_saftx_score"/> percent.
+            </div>
+    
+            <div class="question-settings">Margin %</div>  
+    
+            <div class="answer-settings">
+                <div class="circle"></div>
+                Margin % per truck shouldn't be less than 
+                <input class="inpt" type="text"  autocomplete="off" formControlName="min_margin_percent_per_truck"/> percent.
+            </div>
+    
+            <div class="question-settings">Dispatcher</div>  
+    
+            <div class="answer-settings">
+                <div class="circle"></div>
+                Dispatcher's monthly rate per mile shouldn't be lower 
+                <input class="inpt" type="text"  autocomplete="off" 
+                formControlName="min_dispatcher_montly_rpm_then_average"/> than average.
+            </div>
+    
+            <div class="question-settings">Driver</div>  
+    
+            <div class="answer-settings">
+                <div class="circle"></div>
+                Driver's paycheck shouldn't be less than 
+                <input class="inpt" type="text"  autocomplete="off" 
+                formControlName="min_drivers_paycheckper_week"/> per week.
+            </div>
+    
+            <div class="question-settings">Loads</div>  
+    
+            <div class="answer-settings">
+                <div class="circle"></div>
+                Loads with less than 
+                <input class="inpt" type="text"  autocomplete="off" 
+                formControlName="min_paid_for_load_with_max_miles"/> miles shouldn't be paid less than
+                <input class="inpt" type="text"  autocomplete="off" 
+                formControlName="Loads_with_max_miles"/>.
+            </div>
+    
+            <div class="btns-action-container">
+                <button type="submit" mat-raised-button class="btn-save">Save</button>
+                <button type="button" mat-raised-button class="btn-cancel">Cancel</button>
+            </div>
+    
+        </form>
+    
+    </div>
+</ng-container>

@@ -1,0 +1,62 @@
+<mat-card class="top-card">
+    <mat-form-field appearance="standard"  floatLabel="never">
+      <mat-select placeholder="Operating area">
+        <mat-option [ngClass]="i === selectedOperatingArea ? 'active': ''"
+        *ngFor="let option of operatingAreaOptions; let i = index" [value]="option" (click)="selectedOperatingAreaOption(i)">{{ option }}</mat-option>
+      </mat-select>            
+   </mat-form-field>
+   <mat-form-field appearance="standard"  floatLabel="never">
+      <mat-select placeholder="NotAllowed">
+        <mat-option [ngClass]="i === selectedNotAllowed ? 'active': ''"
+        *ngFor="let option of notAllowedOptions; let i = index" [value]="option" (click)="selectedNotAllowedOption(i)">{{ option }}</mat-option>
+      </mat-select> 
+    </mat-form-field>
+  
+  <mat-slide-toggle class="floatright"></mat-slide-toggle>
+  </mat-card>
+  
+  
+  <mat-card class="bottom-card">
+
+    <mat-form-field appearance="standard"  floatLabel="never">
+      <mat-select placeholder="$/mile" >
+        <mat-option [ngClass]="i === selectedMile ? 'active': ''"
+        *ngFor="let option of mileOptions; let i = index" [value]="option" (click)="selectedMileOption(i)">{{ option }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="standard" floatLabel="never">   
+      <mat-select placeholder="Per driver">
+        <mat-option [ngClass]="i === selectedPerDriver ? 'active': ''"
+        *ngFor="let option of perDriverOptions; let i = index" [value]="option" (click)="selectedPerDriverOption(i)">{{ option }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="standard"  floatLabel="never">
+        <mat-select placeholder="$/mile" >
+          <mat-option [ngClass]="i === selectedMile ? 'active': ''"
+          *ngFor="let option of mileOptions; let i = index" [value]="option" (click)="selectedMileOption(i)">{{ option }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="standard" floatLabel="never">   
+        <mat-select placeholder="Per driver">
+          <mat-option [ngClass]="i === selectedPerDriver ? 'active': ''"
+          *ngFor="let option of perDriverOptions; let i = index" [value]="option" (click)="selectedPerDriverOption(i)">{{ option }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+    <mat-form-field appearance="standard" floatLabel="never">
+      <input matInput placeholder="12.01.2022." readonly>
+    </mat-form-field>
+  
+    <mat-form-field appearance="standard"  floatLabel="never">
+      <input matInput placeholder="02.02.2023." readonly>
+    </mat-form-field>
+  
+    <div class="recruiting-btns floatright">
+      <button mat-raised-button class="successrate" disabled="disabled">View</button>
+    </div>    
+    <div class="recruiting-btns floatright">
+      <button mat-raised-button class="successrate fail" disabled="disabled" >-</button>
+    </div>    
+  
+  
+  </mat-card>

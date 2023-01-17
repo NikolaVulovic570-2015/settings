@@ -1,0 +1,13 @@
+<!--Settings card-->
+
+<mat-card class="settings-card">
+    <div class="settings-btns">
+        <button mat-raised-button class="btn mr" [ngClass]="i === selectedIndex ? 'active': ''"
+        *ngFor="let name of btnsName; let i = index" (click)="selectBtn(i)">{{ name }}</button>
+    </div>
+
+    <!--Performance-->
+    <ng-container *ngIf="selectedIndex === 0">
+        <app-performance [allData]="performanceObj"></app-performance>
+    </ng-container>
+</mat-card>

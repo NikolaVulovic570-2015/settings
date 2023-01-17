@@ -1,0 +1,75 @@
+@use '@angular/material' as mat;
+.mat-form-field {
+  margin-right: 10px;
+  min-width: 190px;
+  min-height: 80px;
+  font-family:  Roboto;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;   
+  @include mat.elevation(2);
+}
+
+    .active {
+        background-color: #0060fc;
+        color: #fff;
+    }
+
+    .top-card {
+        background-color: #fbfbfb;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+
+      .bottom-card {
+        background-color: #fbfbfb;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+      }
+
+      :host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+        background-color: green;
+    }
+    
+    :host ::ng-deep  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+        background-color: white ;
+    }
+
+.floatright{
+    float:right;
+  }
+
+  .floatleft{
+    float:left;
+  }
+
+.successrate {
+  min-width: 120px;
+  min-height: 80px;
+  font-family:  Roboto;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;   
+  @include mat.elevation(2);
+  margin-right: 10px;
+}
+
+.fail{
+  background-color: darkred;
+  color:white;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-select-arrow {
+  color: black;
+  margin-right: 10px;
+}
+
+
